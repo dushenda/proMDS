@@ -10,10 +10,11 @@
 @description: None
 """
 import os
+import get_info_modis
+from PySide2.QtGui import QPixmap, QIcon
 from PySide2.QtWidgets import QApplication, QFileDialog, QProgressDialog, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import Qt
-import get_info_modis
 from threading import Thread
 
 
@@ -21,6 +22,8 @@ class InfoWindow:
     def __init__(self, parent):
         self.info_dlg = QUiLoader(parent=parent).load("./.ui/info.ui")
         self.info_dlg.setWindowModality(Qt.ApplicationModal)
+        icon_window = QIcon("./.images/tree.ico")
+        self.info_dlg.setWindowIcon(icon_window)
 
 
 class Stats:
@@ -82,6 +85,9 @@ class Stats:
 
     def init_content(self):
         # 初始化
+        self.ui.setWindowIcon(QIcon("./.images/tree.ico"))
+        title_img = QPixmap("./.images/alpha.png")
+        self.ui.label_7.setPixmap(title_img)
         self.ui.lineEdit_in_dir.setText(os.path.abspath('./'))
         self.ui.lineEdit_out_file.setText(os.path.abspath('./') + '\\out.csv')
         self.ui.lineEdit_lon.setText('94.32')
