@@ -1,6 +1,6 @@
 # proMDS 工具
 
-![](D:\CodePycharm\PySide\ImageRead\.images_readme\earth1.bmp)`
+![](.images_readme/earth1.bmp)
 
 proMDS`是一个用来批量提取文件夹里面`MODIS`影像太阳光波段的平均`DN`值、定标系数的工具。
 
@@ -18,6 +18,6 @@ proMDS`是一个用来批量提取文件夹里面`MODIS`影像太阳光波段的
 
 #### 运行界面
 
-![](D:\CodePycharm\PySide\ImageRead\.images_readme\运行界面.jpg)
+![](.images_readme/运行界面.jpg)
 
 ## 实现逻辑
