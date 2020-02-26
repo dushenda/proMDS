@@ -18,6 +18,14 @@ import datetime
 
 
 def get_result_scale(path_mxd03_list, path_mxd02_list, position, delta):
+    """
+
+    :param path_mxd03_list:
+    :param path_mxd02_list:
+    :param position:
+    :param delta:
+    :return:
+    """
     columns_names = ['DateTime', 'Longitude', 'Latitude', 'SolarZenith', 'SolarAzimuth', 'SensorZenith',
                      'SensorAzimuth', 'ref_1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
                      '11', '12', '13lo', '13hi', '14lo', '14hi', '15', '16', '17', '18',
@@ -39,6 +47,14 @@ def get_result_scale(path_mxd03_list, path_mxd02_list, position, delta):
 
 
 def get_result(path_mxd03_list, path_mxd02_list, position, delta):
+    """
+
+    :param path_mxd03_list:
+    :param path_mxd02_list:
+    :param position:
+    :param delta:
+    :return:
+    """
     columns_names = ['DateTime', 'Longitude', 'Latitude', 'SolarZenith', 'SolarAzimuth', 'SensorZenith',
                      'SensorAzimuth', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
                      '11', '12', '13lo', '13hi', '14lo', '14hi', '15', '16', '17', '18',
@@ -61,6 +77,11 @@ def get_result(path_mxd03_list, path_mxd02_list, position, delta):
 
 
 def get_date_time(path_mxd021km):
+    """
+
+    :param path_mxd021km:
+    :return:
+    """
     file_name = os.path.basename(path_mxd021km)
     yyyy = file_name[10:14]
     ddd = file_name[14:17]
@@ -90,6 +111,11 @@ def get_band_names(path_mxd021km):
 
 
 def get_band_scales(path_mxd021km):
+    """
+
+    :param path_mxd021km:
+    :return:
+    """
     dict_ref_sb_band_scales = get_info_mxd03.get_mxd03_attr_attr(path_mxd021km, 'EV_1KM_RefSB', 'reflectance_scales')
     dict_ref_sb250_band_scales = get_info_mxd03.get_mxd03_attr_attr(path_mxd021km, 'EV_250_Aggr1km_RefSB',
                                                                     'reflectance_scales')

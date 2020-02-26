@@ -88,6 +88,12 @@ def get_mxd03_attr_attr(path_mxd03, attr1, attr2):
 
 
 def get_mxd_attr(path_mxd, attr):
+    """
+
+    :param path_mxd:
+    :param attr:
+    :return:
+    """
     file = SD(path_mxd, SDC.READ)
     sds_obj = file.select(attr)
     result_dict = sds_obj.attributes()
