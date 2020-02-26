@@ -20,11 +20,11 @@ import datetime
 def get_result_scale(path_mxd03_list, path_mxd02_list, position, delta):
     """
 
-    :param path_mxd03_list:
-    :param path_mxd02_list:
-    :param position:
-    :param delta:
-    :return:
+    :param path_mxd03_list:mxd03文件所在路径
+    :param path_mxd02_list:mxd02文件所在路径
+    :param position:经纬度
+    :param delta:经纬度偏移量
+    :return:DataFrame格式的数据，影像中获取的定标系数
     """
     columns_names = ['DateTime', 'Longitude', 'Latitude', 'SolarZenith', 'SolarAzimuth', 'SensorZenith',
                      'SensorAzimuth', 'ref_1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
@@ -49,11 +49,11 @@ def get_result_scale(path_mxd03_list, path_mxd02_list, position, delta):
 def get_result(path_mxd03_list, path_mxd02_list, position, delta):
     """
 
-    :param path_mxd03_list:
-    :param path_mxd02_list:
-    :param position:
-    :param delta:
-    :return:
+    :param path_mxd03_list:mxd03文件所在路径
+    :param path_mxd02_list:mxd02文件所在路径
+    :param position:经纬度
+    :param delta:经纬度偏移量
+    :return:DataFrame格式的数据，影像中获取的DN值
     """
     columns_names = ['DateTime', 'Longitude', 'Latitude', 'SolarZenith', 'SolarAzimuth', 'SensorZenith',
                      'SensorAzimuth', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
@@ -79,8 +79,8 @@ def get_result(path_mxd03_list, path_mxd02_list, position, delta):
 def get_date_time(path_mxd021km):
     """
 
-    :param path_mxd021km:
-    :return:
+    :param path_mxd021km:mxd02单个文件路径
+    :return:时间数据
     """
     file_name = os.path.basename(path_mxd021km)
     yyyy = file_name[10:14]
@@ -99,7 +99,7 @@ def get_date_time(path_mxd021km):
 def get_band_names(path_mxd021km):
     """
 
-    :param path_mxd021km: 文件路径
+    :param path_mxd021km: mxd02单个文件路径
     :return: list 太阳波段名称
     """
     dict_ref_sb_band_names = get_info_mxd03.get_mxd03_attr_attr(path_mxd021km, 'EV_1KM_RefSB', 'band_names')
@@ -113,8 +113,8 @@ def get_band_names(path_mxd021km):
 def get_band_scales(path_mxd021km):
     """
 
-    :param path_mxd021km:
-    :return:
+    :param path_mxd021km:mxd02单个文件路径
+    :return:定标系数
     """
     dict_ref_sb_band_scales = get_info_mxd03.get_mxd03_attr_attr(path_mxd021km, 'EV_1KM_RefSB', 'reflectance_scales')
     dict_ref_sb250_band_scales = get_info_mxd03.get_mxd03_attr_attr(path_mxd021km, 'EV_250_Aggr1km_RefSB',
@@ -135,7 +135,7 @@ def get_band_scales(path_mxd021km):
 def get_band_dn(path_mxd021km, index):
     """
 
-    :param path_mxd021km: 1km分辨率影像文件路径
+    :param path_mxd021km: 1km分辨率影像文件路径（mxd02km）
     :param index: 索引点
     :return: 太阳波段dn值平均
     """

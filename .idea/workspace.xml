@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/get_info_modis.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_info_modis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/get_info_mxd021km.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_info_mxd021km.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/get_info_mxd03.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_info_mxd03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

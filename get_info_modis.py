@@ -21,10 +21,10 @@ class ModDir:
 
     def __init__(self, path, position, delta):
         """
-
-        :param path:
-        :param position:
-        :param delta:
+        初始化ModDir
+        :param path:影像文件路径
+        :param position:经纬度【经度，纬度】°
+        :param delta:±经纬度偏移量
         """
         self.path = path
         self.__set_dir_list()
@@ -33,8 +33,8 @@ class ModDir:
 
     def __set_dir_list(self):
         """
-
-        :return:
+        私有函数，得到两类文件列表函数
+        :return:None
         """
         # path为文件所在文件夹，得到MXD021KM数据列表和MXD03数据列表
         file_all = os.listdir(self.path)
@@ -45,25 +45,25 @@ class ModDir:
 
     def generate_table(self, out_path):
         """
-
-        :param out_path:
-        :return:
+        输出DN文件到指定路径（out_path）
+        :param out_path:输出路径
+        :return:None
         """
         df = get_info_mxd021km.get_result(self.mxd_03, self.mxd_21, self.position, self.delta)
         df.to_csv(out_path)
 
     def get_file_nums(self):
         """
-
-        :return:
+        命令行输出文件数目（mxd21km）
+        :return:None
         """
         print('总文件数:', len(self.mxd_21))
 
     def generate_table_scale(self, out_path):
         """
-
-        :param out_path:
-        :return:
+        输出定标系数到指定路径（out_path）
+        :param out_path:输出路径
+        :return:None
         """
         df = get_info_mxd021km.get_result_scale(self.mxd_03, self.mxd_21, self.position, self.delta)
         df.to_csv(out_path)

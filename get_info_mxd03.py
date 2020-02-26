@@ -90,9 +90,9 @@ def get_mxd03_attr_attr(path_mxd03, attr1, attr2):
 def get_mxd_attr(path_mxd, attr):
     """
 
-    :param path_mxd:
-    :param attr:
-    :return:
+    :param path_mxd:mxd单个文件所在位置
+    :param attr:mxd03影像的数据集名称
+    :return:数据集的DN值
     """
     file = SD(path_mxd, SDC.READ)
     sds_obj = file.select(attr)
