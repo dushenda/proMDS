@@ -1,6 +1,5 @@
 # proMDS 工具
-![](https://img.shields.io/badge/blog-@champyin-orange.svg?style=plastic)
-![](https://img.shields.io/badge/license-MIT-brightgreen) ![http://klocc.aiofm.ac.cn/sysjj/sysjj/](https://img.shields.io/badge/sponsor-@KLOCC-yellowgreen.svg?style=plastic)
+![](https://img.shields.io/badge/license-MIT-brightgreen) [![](http://klocc.aiofm.ac.cn/sysjj/sysjj/)](https://img.shields.io/badge/sponsor-@KLOCC-yellowgreen.svg?style=plastic)
 
 `proMDS`是一个用来批量提取文件夹里面`MODIS`影像太阳光波段的平均`DN`值、定标系数的工具
 
